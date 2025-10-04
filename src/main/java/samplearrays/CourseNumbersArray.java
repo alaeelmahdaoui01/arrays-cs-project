@@ -29,7 +29,7 @@ public class CourseNumbersArray {
 
 
         // specific course number we want to check if updatedCourses contains
-        int checkCourse = 1010 ;
+        int checkCourse = 1010;
         int containsCourse = 0 ; // variable that indicates whether the array contains the course or not
         for (int course: updatedCourses){
             if (course == checkCourse){
