@@ -7,7 +7,7 @@ class Student {
     private int id;
     private String name;
     private int age;
-    private int grade; // 0..20 or 0..100 as you prefer ,
+    private int grade; // 0..20 or 0..100 as you prefer
 
     // keep counter private; expose getter only
     private static int numStudent = 0;
