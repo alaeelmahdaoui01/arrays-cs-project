@@ -4,7 +4,7 @@ public class BankAccount {
 
     String name;
     double currentBalance;
-    //TO-DO: ,Initialize an Array with 1000 in size that stores Double called 'transactions' to keep track of the user's transactions
+    //TO-DO: Initialize an Array with 1000 in size that stores Double called 'transactions' to keep track of the user's transactions
     double[] transactions = new double[1000] ;
     int currentTransactionIndex = 0;
 
@@ -39,15 +39,15 @@ public class BankAccount {
     public void displayTransactions(){
         System.out.println(this.name + "'s transactions: ");
         System.out.println("Deposits: ");
-        for (double transaction : transactions){
-            if (transaction >= 0){
-                System.out.println(transaction);
+        for (int i = 0; i < currentTransactionIndex; i++) {
+            if (transactions[i] >= 0) {
+                System.out.println(transactions[i]);
             }
         }
         System.out.println("Withdrawals : ");
-        for (double transaction : transactions){
-            if (transaction < 0) {
-                System.out.println(-transaction);
+        for (int i = 0; i < currentTransactionIndex; i++) {
+            if (transactions[i] < 0) {
+                System.out.println(-transactions[i]);
             }
         }
     }
