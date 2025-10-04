@@ -35,14 +35,14 @@ public class ManageStudent {
             int studentGrade = student.getGrade() ;
             sumGrades +=  studentGrade ;
         }
-        double averageG = sumGrades/Student.getNumStudent() ;
+        double averageG = sumGrades/ students.length ;
         return averageG ;
     }
 
     // 5) Search by Name (case-sensitive; change to equalsIgnoreCase if desired)
     public static Student findStudentByName(Student[] students, String name) {
         for (Student student : students){
-            if (student.getName().equals(name) ){
+            if (student.getName()==name ){  // or i could use .equals()
                 return student ;
             }
         }
@@ -92,7 +92,7 @@ public class ManageStudent {
         return false;
     }
 
-    // 9) Find Duplicate Names f
+    // 9) Find Duplicate Names
     public static boolean hasDuplicateNames(Student[] students) {
         for (int i = 0; i < students.length-1; i++) {
             for (int j = i + 1; j < students.length; j++) {
@@ -106,9 +106,12 @@ public class ManageStudent {
 
     // 10) Expandable Array: return a new array with one more slot and append student
     public static Student[] appendStudent(Student[] students, Student newStudent) {
-        Student[] newStudents = new Student[students.length + 1] ;
-        newStudents[students.length] = newStudent ;
-        return newStudents ;
+        Student[] newStudents = new Student[students.length + 1];
+        for (int i = 0; i < students.length; i++) {
+            newStudents[i] = students[i]; // copy old students
+        }
+        newStudents[students.length] = newStudent; // add new student
+        return newStudents;
     }
 
     // 1) Create an Array of Students + demos for all tasks
