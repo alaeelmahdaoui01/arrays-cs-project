@@ -92,7 +92,7 @@ public class ManageStudent {
         return false;
     }
 
-    // 9) Find Duplicate Names
+    // 9) Find Duplicate Names f
     public static boolean hasDuplicateNames(Student[] students) {
         for (int i = 0; i < students.length-1; i++) {
             for (int j = i + 1; j < students.length; j++) {

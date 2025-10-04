@@ -4,7 +4,7 @@ public class BankAccount {
 
     String name;
     double currentBalance;
-    //TO-DO: Initialize an Array with 1000 in size that stores Double called 'transactions' to keep track of the user's transactions
+    //TO-DO: ,Initialize an Array with 1000 in size that stores Double called 'transactions' to keep track of the user's transactions
     double[] transactions = new double[1000] ;
     int currentTransactionIndex = 0;
 
