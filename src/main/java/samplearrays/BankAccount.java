@@ -5,25 +5,55 @@ public class BankAccount {
     String name;
     double currentBalance;
     //TO-DO: Initialize an Array with 1000 in size that stores Double called 'transactions' to keep track of the user's transactions
+    double[] transactions = new double[1000] ;
+    int currentTransactionIndex = 0;
+
 
     public BankAccount(String name, int startingBalance){
-
+        this.name = name ;
+        this.currentBalance = startingBalance ;
     }
 
     public void deposit(double amount){
-
+        if (amount>=0) {
+            transactions[currentTransactionIndex] = amount;
+            currentTransactionIndex++;
+            this.currentBalance += amount ;
+            System.out.println(this.name + " deposited an amount of: " + amount + ".");
+            this.displayBalance();
+        }
+        else { System.out.println("Unsuccessful deposit") ; }
     }
 
     public void withdraw(double amount){
-
+        if (amount>=0 && this.currentBalance>=amount){
+            transactions[currentTransactionIndex] = -amount;
+            currentTransactionIndex++;
+            this.currentBalance -= amount ;
+            System.out.println(this.name + " withdrawed an amount of: " + amount + ".");
+            this.displayBalance();
+        }
+        else { System.out.println("Unsuccessful withdrawal") ; }
     }
 
     public void displayTransactions(){
-
+        System.out.println(this.name + "'s transactions: ");
+        System.out.println("Deposits: ");
+        for (double transaction : transactions){
+            if (transaction >= 0){
+                System.out.println(transaction);
+            }
+        }
+        System.out.println("Withdrawals : ");
+        for (double transaction : transactions){
+            if (transaction < 0) {
+                System.out.println(-transaction);
+            }
+        }
     }
 
     public void displayBalance(){
-
+        System.out.println("Balance: " + this.currentBalance) ;
     }
 
     public static void main(String[] args) {
